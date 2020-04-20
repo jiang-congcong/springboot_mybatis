@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--配置文件版-->
+<!--
+	namespace:命名空间：一定唯一 ,必须是某个接口函数的完全限定名
+ -->
+<mapper namespace="com.ccj.springboot08_mybatis.mapper.EmployeeMapper">
+
+    <!--public Employee getEmpById(int id);
+
+    public void insertEmp(Employee employee);-->
+
+    <select id="getEmpById" resultType="com.ccj.springboot08_mybatis.entity.Employee">
+        select * from employee where id = #{id}
+    </select>
+
+    <insert id="insertEmp" >
+        insert into employee(lastName,email,gender,d_id) values (#{lastName},#{email},#{gender},#{did})
+    </insert>
+
+
+
+</mapper>
